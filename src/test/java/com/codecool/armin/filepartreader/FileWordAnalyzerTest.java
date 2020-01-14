@@ -15,7 +15,7 @@ class FileWordAnalyzerTest {
     void testGetWordsOrderedAlphabetically() throws IOException {
         FilePartReader fpr = new FilePartReader();
         FileWordAnalyzer fwa = new FileWordAnalyzer(fpr);
-        List<String> expectedResult = new ArrayList<>(Arrays.asList("a", "b", "c", "d", "e", "mom"));
+        List<String> expectedResult = new ArrayList<>(Arrays.asList("a", "b", "c", "d", "e"));
         assertEquals(expectedResult, fwa.getWordsOrderedAlphabetically());
     }
 
@@ -25,6 +25,14 @@ class FileWordAnalyzerTest {
         FileWordAnalyzer fwa = new FileWordAnalyzer(fpr);
         List<String> expectedResult = new ArrayList<>(Arrays.asList("a"));
         assertEquals(expectedResult, fwa.getWordsContainingSubstring("a"));
+    }
+
+    @Test
+    void testGetStringsWhichPalindromes() throws IOException {
+        FilePartReader fpr = new FilePartReader();
+        FileWordAnalyzer fwa = new FileWordAnalyzer(fpr);
+        List<String> expectedResult = new ArrayList<>(Arrays.asList("b", "a", "c", "e", "d"));
+        assertEquals(expectedResult, fwa.getStringsWhichPalindromes());
     }
 
 }
