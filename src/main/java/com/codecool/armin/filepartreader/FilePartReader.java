@@ -1,4 +1,4 @@
-package com.codecool.armin.filepartreader.main;
+package com.codecool.armin.filepartreader;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,11 +7,7 @@ import java.io.InputStreamReader;
 
 public class FilePartReader {
 
-    private String test;
-
-    FilePartReader(Integer test) {
-        this.test = test;
-    }
+    FilePartReader() {}
 
     public void setup(String filePath, Integer fromLine, Integer toLine) {
         if (toLine < fromLine || fromLine < 1) {

@@ -1,4 +1,4 @@
-package com.codecool.armin.filepartreader.main;
+package com.codecool.armin.filepartreader;
 
 import java.io.IOException;
 import java.util.ArrayList;
