@@ -15,13 +15,13 @@ public class FileWordAnalyzer {
     }
 
     public List getWordsOrderedAlphabetically () throws IOException {
-        List<String> result = Arrays.asList(filePartReader.readLines(1, 5).split("\\s+"));
+        List<String> result = Arrays.asList(filePartReader.readLines("test", 1, 5).split("\\s+"));
         Collections.sort(result);
         return result;
     }
 
     public List getWordsContainingSubstring(String subString) throws IOException {
-        String[] textList = filePartReader.readLines(1, 5).split("\\s+");
+        String[] textList = filePartReader.readLines("test",1, 5).split("\\s+");
         List<String> result = new ArrayList<>();
         for (String word : textList) {
             if(word.contains(subString)) {
@@ -32,7 +32,7 @@ public class FileWordAnalyzer {
     }
 
     public List getStringsWhichPalindromes () throws IOException {
-        String[] textList = filePartReader.readLines(1, 5).split("\\s+");
+        String[] textList = filePartReader.readLines("test",1, 5).split("\\s+");
         List<String> result = new ArrayList<>();
         for (String word : textList) {
             String reverseWord = new StringBuilder().append(word).reverse().toString();
